@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="fontewhite">
+        <h1>Criptografia</h1>
+      </div>
+    </header>
+
+    <div class="formulario">
+      <textarea
+        rows="10"
+        cols="50"
+        id="myText"
+        placeholder="Texto a ser criptografado"
+      ></textarea>
+      <br />
+      <button onclick="butaoCodificar()">Codificar</button> <br />
+      <button onclick="butaoDecodificar()">Decodificar</button>
+      <br />
+
+      <div class="fontewhite">
+        <input
+          type="radio"
+          id="cifradecesar"
+          name="codetype"
+          value="cifradecesar"
+          checked
+        />
+          <label for="cifradecesar">Cifra de Cesar</label><br />
+        <label for="quantity">Incremento de 1 a 25:</label>
+        <input type="number" id="incremento" value="1" name="quantity" min="1" max="25" />
+        <br />
+          <input type="radio" id="base64" name="codetype" value="base64" />  
+        <label for="base64">Base64</label> <br />
+      </div>
+      <br />
+      <textarea rows="10" cols="50" id="output"></textarea>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
