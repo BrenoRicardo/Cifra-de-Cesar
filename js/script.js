@@ -28,9 +28,10 @@ function butaoCodificar() {
   const texto = document.getElementById("myText").value;
   const contagem = parseInt(document.getElementById("incremento").value);
 
-  const selecinadoBase64 = document.getElementById("base64").checked;
+  const codigoselecionado = document.getElementById("codetype").value;
+  console.log(codigoselecionado);
   let codiText = "";
-  if (selecinadoBase64) {
+  if (codigoselecionado == "base64") {
     codiText = codifyBase64(texto);
   } else {
     codiText = codify(texto, contagem);
@@ -42,12 +43,25 @@ function butaoDecodificar() {
   const texto = document.getElementById("myText").value;
   const contagem = parseInt(document.getElementById("incremento").value);
 
-  const selecinadoBase64 = document.getElementById("base64").checked;
+  const codigoselecionado = document.getElementById("codetype").value;
   let codiText = "";
-  if (selecinadoBase64) {
+  if (codigoselecionado == "base64") {
     codiText = decodyBase64(texto);
   } else {
     codiText = decodify(texto, contagem);
   }
   document.getElementById("output").innerText = codiText;
+}
+
+function verificarTipo() {
+  const inputPraEsconder = document.getElementById("incremento");
+  const labelPraEsconder = document.getElementById("incrementoLabel");
+  const codigoselecionado = document.getElementById("codetype").value;
+  if (codigoselecionado == "base64") {
+    labelPraEsconder.setAttribute("hidden", "hidden");
+    inputPraEsconder.setAttribute("type", "hidden");
+  } else {
+    labelPraEsconder.removeAttribute("hidden");
+    inputPraEsconder.setAttribute("type", "number");
+  }
 }
